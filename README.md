@@ -1,6 +1,6 @@
-# UserManagement — Simple SDK and Web API (updated)
+# UserManagement — Simple SDK and Web API
 
-Short summary (VI):
+**Short summary**
 
 - This project have two main parts:
   - `UserMgmt.Sdk` — HTTP SDK client that calls external data sources
