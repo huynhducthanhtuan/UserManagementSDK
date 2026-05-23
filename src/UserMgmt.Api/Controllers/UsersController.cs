@@ -5,36 +5,37 @@ using UserMgmt.Sdk.Services;
 namespace UserMgmt.Api.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
-public class EmployeesController : ControllerBase
+[Route("api/v1/")]
+public class UsersController : ControllerBase
 {
     private readonly IUserMgmtClient _sdk;
 
-    public EmployeesController(IUserMgmtClient sdk)
+    public UsersController(IUserMgmtClient sdk)
     {
         _sdk = sdk;
     }
 
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<User>>> Get()
+    [HttpGet("users")]
+    public async Task<ActionResult<UsersResponse>> Get()
     {
         try
         {
             var users = await _sdk.GetUsersAsync();
             return Ok(users);
         }
-        catch(Exception ex){
+        catch (Exception ex)
+        {
             return BadRequest(ex.Message);
         }
     }
 
-    [HttpGet("{name}")]
-    public async Task<ActionResult<User>> Get(string name)
+    [HttpGet("products")]
+    public async Task<ActionResult<ProductsResponse>> GetProducts()
     {
         try
         {
-            var user = await _sdk.GetUserAsync(name);
-            return Ok(user);
+            var products = await _sdk.GetProductsAsync();
+            return Ok(products);
         }
         catch (Exception ex)
         {

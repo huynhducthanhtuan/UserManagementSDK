@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services
 builder.Services.AddControllers();
-builder.Services.AddUserMgmtSdk("http://localhost:3000");
+builder.Services.AddUserMgmtSdk("https://dummyjson.com/");
 
 // Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
@@ -21,7 +21,5 @@ app.UseSwaggerUI(c =>
 });
 
 app.MapControllers();
-
-app.Urls.Add("http://localhost:5000");
 
 app.Run();

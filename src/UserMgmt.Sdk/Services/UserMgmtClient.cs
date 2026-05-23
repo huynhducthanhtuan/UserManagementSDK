@@ -12,13 +12,15 @@ public class UserMgmtClient : IUserMgmtClient
         _httpClient = httpClient;
     }
 
-    public async Task<IEnumerable<UserDto>> GetUsersAsync()
+    public async Task<UsersResponse> GetUsersAsync()
     {
-        return await _httpClient.GetFromJsonAsync<IEnumerable<UserDto>>("api/users");
+        // Call API [GET] https://dummyjson.com/users
+        return await _httpClient.GetFromJsonAsync<UsersResponse>("users");
     }
 
-    public async Task<UserDto?> GetUserAsync(string name)
+    public async Task<ProductsResponse> GetProductsAsync()
     {
-        return await _httpClient.GetFromJsonAsync<UserDto>($"api/users/{name}");
+        // Call API [GET] https://dummyjson.com/products
+        return await _httpClient.GetFromJsonAsync<ProductsResponse>("products");
     }
 }
