@@ -25,7 +25,7 @@ dotnet build
 dotnet run --project UserMgmt.Api/UserMgmt.Api.csproj
 ```
 
-The API listens on `https://localhost:44394` by default (see [UserMgmt.Api/Program.cs](UserMgmt.Api/Program.cs)).
+The API listens on `https://localhost:44394` by default.
 
 **Endpoints**
 
